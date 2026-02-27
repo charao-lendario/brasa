@@ -16,6 +16,9 @@ import type { Contract } from '../../types';
 const col = createColumnHelper<Contract>();
 
 const columns = [
+  col.accessor('id', {
+    header: 'Contrato',
+  }),
   col.accessor('date', {
     header: 'Data',
     cell: info => formatDate(info.getValue()),
@@ -31,16 +34,35 @@ const columns = [
   col.accessor('empreendimento', {
     header: 'Empreendimento',
   }),
-  col.accessor('imovel', {
-    header: 'Imovel',
-    cell: info => <span className="max-w-[200px] truncate block">{info.getValue()}</span>,
-  }),
   col.accessor('valor', {
     header: 'Valor',
     cell: info => <span className="text-gold-400">{formatCurrency(info.getValue())}</span>,
   }),
+  col.accessor('area', {
+    header: 'Area',
+    cell: info => info.getValue() || '-',
+  }),
+  col.accessor('unidade', {
+    header: 'Unidade',
+    cell: info => info.getValue() || '-',
+  }),
   col.accessor('year', {
     header: 'Ano',
+  }),
+  col.accessor('status', {
+    header: 'Status',
+    cell: info => {
+      const status = info.getValue();
+      return (
+        <span className={`text-xs font-medium px-2 py-0.5 rounded ${
+          status === 'Ativo'
+            ? 'text-emerald bg-emerald/10'
+            : 'text-coral bg-coral/10'
+        }`}>
+          {status}
+        </span>
+      );
+    },
   }),
 ];
 

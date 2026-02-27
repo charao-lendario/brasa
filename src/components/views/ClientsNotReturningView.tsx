@@ -5,7 +5,7 @@ import { formatCurrency, formatDate } from '../../utils/formatters';
 import { UserX } from 'lucide-react';
 import type { Contract } from '../../types';
 
-export function NotReturningView() {
+export function ClientsNotReturningView() {
   const { allContracts } = useFilteredData();
 
   const in2023Not2024 = useMemo(() => brokersInANotB(allContracts, 2023, 2024), [allContracts]);

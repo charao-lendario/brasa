@@ -1,4 +1,4 @@
-import type { Contract, BrokerRanking } from '../types';
+import type { Contract, AgencyRanking } from '../types';
 
 export function groupByYear(contracts: Contract[]): Record<number, Contract[]> {
   return contracts.reduce((acc, c) => {
@@ -25,7 +25,7 @@ export function brokersInANotB(contracts: Contract[], yearA: number, yearB: numb
   return contracts.filter(c => c.year === yearA && notReturned.has(c.broker.toUpperCase().trim()));
 }
 
-export function brokerRanking(contracts: Contract[]): BrokerRanking[] {
+export function brokerRanking(contracts: Contract[]): AgencyRanking[] {
   const brokerMap = new Map<string, { count: number; value: number }>();
 
   for (const c of contracts) {

@@ -4,7 +4,6 @@ import { StatCardGrid } from '../cards/StatCardGrid';
 import { SalesByYearChart } from '../charts/SalesByYearChart';
 import { ValueByYearChart } from '../charts/ValueByYearChart';
 import { MonthlyTrendChart } from '../charts/MonthlyTrendChart';
-import { EmpreendimentoPieChart } from '../charts/EmpreendimentoPieChart';
 
 export function OverviewView() {
   const { contracts } = useFilteredData();
@@ -18,10 +17,7 @@ export function OverviewView() {
         <SalesByYearChart stats={stats} />
         <ValueByYearChart stats={stats} />
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <MonthlyTrendChart stats={stats} />
-        <EmpreendimentoPieChart data={stats.byEmpreendimento} />
-      </div>
+      <MonthlyTrendChart stats={stats} />
     </div>
   );
 }

@@ -4,18 +4,18 @@ import {
   Users,
   UserX,
   Trophy,
+  Target,
   FileSpreadsheet,
-  ClipboardList,
   X,
 } from 'lucide-react';
 
 const navItems = [
   { to: '/', icon: LayoutDashboard, label: 'Visao Geral' },
-  { to: '/corretores', icon: Users, label: 'Corretores por Ano' },
+  { to: '/clientes', icon: Users, label: 'Imobiliarias por Ano' },
   { to: '/nao-retornaram', icon: UserX, label: 'Nao Retornaram' },
-  { to: '/ranking', icon: Trophy, label: 'Ranking de Vendas' },
+  { to: '/imobiliarias', icon: Trophy, label: 'Ranking de Vendas' },
+  { to: '/vendas-diretas', icon: Target, label: 'Vendas Diretas' },
   { to: '/contratos', icon: FileSpreadsheet, label: 'Todos os Contratos' },
-  { to: '/relatorio', icon: ClipboardList, label: 'Relatorio' },
 ];
 
 interface SidebarProps {

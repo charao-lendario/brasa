@@ -13,12 +13,16 @@ export interface Contract {
   year: number;
   month: number;
   fileYear: number;
+  status: string;
+  unidade: string;
+  area: string;
 }
 
 export interface FilterState {
   years: number[];
   empreendimentos: string[];
   brokers: string[];
+  includeCancelled: boolean;
 }
 
 export type FilterAction =
@@ -28,6 +32,7 @@ export type FilterAction =
   | { type: 'SET_EMPREENDIMENTOS'; empreendimentos: string[] }
   | { type: 'TOGGLE_BROKER'; broker: string }
   | { type: 'SET_BROKERS'; brokers: string[] }
+  | { type: 'TOGGLE_CANCELLED' }
   | { type: 'RESET' };
 
 export interface DashboardStats {
@@ -41,9 +46,11 @@ export interface DashboardStats {
   byEmpreendimento: { empreendimento: string; count: number; value: number }[];
 }
 
-export interface BrokerRanking {
+export interface AgencyRanking {
   broker: string;
   contractCount: number;
   totalValue: number;
   avgValue: number;
 }
+
+export type BrokerRanking = AgencyRanking;

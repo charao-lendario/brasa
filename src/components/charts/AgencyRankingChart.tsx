@@ -1,18 +1,18 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import type { BrokerRanking } from '../../types';
+import type { AgencyRanking } from '../../types';
 import { formatCurrency } from '../../utils/formatters';
 
 interface Props {
-  data: BrokerRanking[];
+  data: AgencyRanking[];
 }
 
-export function BrokerRankingChart({ data }: Props) {
+export function AgencyRankingChart({ data }: Props) {
   const chartData = data.slice(0, 10);
 
   if (chartData.length === 0) {
     return (
       <div className="bg-navy-800 rounded-xl border border-navy-600 p-5 flex items-center justify-center h-80">
-        <p className="text-gray-500 text-sm">Nenhum corretor encontrado</p>
+        <p className="text-gray-500 text-sm">Nenhuma imobiliaria encontrada</p>
       </div>
     );
   }

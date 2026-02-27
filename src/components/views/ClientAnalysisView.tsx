@@ -4,7 +4,7 @@ import { groupByYear } from '../../utils/dataTransformers';
 import { formatCurrency, formatDate } from '../../utils/formatters';
 import type { Contract } from '../../types';
 
-export function BrokersByYearView() {
+export function ClientAnalysisView() {
   const { contracts, allYears } = useFilteredData();
 
   const byYear = useMemo(() => {
@@ -17,7 +17,7 @@ export function BrokersByYearView() {
 
   return (
     <div className="space-y-6">
-      <h2 className="text-xl font-bold text-white">Corretores por Ano</h2>
+      <h2 className="text-xl font-bold text-white">Imobiliarias por Ano</h2>
       {byYear.map(({ year, contracts: yearContracts }) => (
         <div key={year} className="bg-navy-800 rounded-xl border border-navy-600 overflow-hidden">
           <div className="px-5 py-3 border-b border-navy-600 flex items-center justify-between">

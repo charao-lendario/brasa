@@ -23,6 +23,10 @@ export function useFilteredData() {
       result = result.filter(c => state.brokers.includes(c.broker));
     }
 
+    if (!state.includeCancelled) {
+      result = result.filter(c => c.status !== 'Cancelado');
+    }
+
     return result;
   }, [state]);
 

@@ -5,6 +5,7 @@ const initialState: FilterState = {
   years: [],
   empreendimentos: [],
   brokers: [],
+  includeCancelled: false,
 };
 
 function filterReducer(state: FilterState, action: FilterAction): FilterState {
@@ -33,6 +34,8 @@ function filterReducer(state: FilterState, action: FilterAction): FilterState {
     }
     case 'SET_BROKERS':
       return { ...state, brokers: action.brokers };
+    case 'TOGGLE_CANCELLED':
+      return { ...state, includeCancelled: !state.includeCancelled };
     case 'RESET':
       return initialState;
     default:
