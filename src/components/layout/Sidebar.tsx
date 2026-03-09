@@ -4,7 +4,6 @@ import {
   Users,
   UserX,
   Trophy,
-  Target,
   FileSpreadsheet,
   X,
 } from 'lucide-react';
@@ -14,7 +13,6 @@ const navItems = [
   { to: '/clientes', icon: Users, label: 'Imobiliarias por Ano' },
   { to: '/nao-retornaram', icon: UserX, label: 'Nao Retornaram' },
   { to: '/imobiliarias', icon: Trophy, label: 'Ranking de Vendas' },
-  { to: '/vendas-diretas', icon: Target, label: 'Vendas Diretas' },
   { to: '/contratos', icon: FileSpreadsheet, label: 'Todos os Contratos' },
 ];
 
